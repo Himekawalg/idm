@@ -1,22 +1,32 @@
-// idm.js by Himekawa(Hermit) - 蝶梦js扩展库,让蝶梦也能用上js。优先支持中文
+// idm.js by Himekawa(Hermit) - 蝶梦js扩展库,优先支持中文。
 // version: v0.1
-var version="0.1";
-var author="Himekawa(Hermit)";
-var pi=3.14159265
 
+// 内置变量
+var idm_version="0.1";
+var idm_author="Himekawa";
+var pi=3.141592653589793
+
+// 带"_"的为测试中函数
 function _test()
 {
     alert("This is a test!\nPowered by idm.js");
 }
 function _强加密(message)
 {
-    // 强加密,不使用base64而使用自创算法。
-    // 只要你不翻源码,基本无解。
+    // 强加密,不使用base64而使用自创算法。只要你不翻源码,基本无解。
+}
+function _强解密(message)
+{
+
 }
 
 function 随机数()
 {
     return Math.random();
+}
+function 随机整数(n,m)
+{
+    return parseInt(Math.random()*(m-n+1)+n);
 }
 function 四舍五入(num)
 {
@@ -37,6 +47,26 @@ function 绝对值(num)
 function 正弦(num)
 {
     return Math.sin(num);
+}
+function 余弦(num)
+{
+    return Math.cos(num);
+}
+function 正切(num)
+{
+    return Math.tan(num);
+}
+function 反正弦(num)
+{
+    return Math.asin(num);
+}
+function 反余弦(num)
+{
+    return Math.acos(num);
+}
+function 反正切(num)
+{
+    return Math.atan(num);
 }
 function 自然对数(num)
 {
@@ -83,4 +113,16 @@ function 持久化检索(name)
 function 持久化删除(name)
 {
     localStorage.removeItem(name);
+}
+function 弹窗(message)
+{
+    alert(message);
+}
+function 音乐开(id)
+{
+    GameScene.play_bgm("http://music.163.com/song/media/outer/url?id="+id+".mp3");
+}
+function 音乐关()
+{
+    GameScene.stop_bgm();
 }
