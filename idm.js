@@ -1,11 +1,9 @@
 // idm.js by Himekawa(Hermit) - 蝶梦js扩展库,优先支持中文。
-// version: v0.1
 
 // 内置变量
 var idm_version="0.1";
 var idm_author="Himekawa";
-var pi=3.141592653589793
-
+var pi=3.141592653589793;
 // 带"_"的为测试中函数
 function _test()
 {
@@ -13,9 +11,17 @@ function _test()
 }
 function _强加密(message)
 {
-    // 强加密,不使用base64而使用自创算法。只要你不翻源码,基本无解。
+    // 强加密,不使用base64而使用自创算法。只要你不翻源码,基本没法解
 }
 function _强解密(message)
+{
+
+}
+function _时间差(t1,t2)
+{
+
+}
+function _数组和()
 {
 
 }
@@ -120,9 +126,58 @@ function 弹窗(message)
 }
 function 音乐开(id)
 {
-    GameScene.play_bgm("http://music.163.com/song/media/outer/url?id="+id+".mp3");
+    window.GameScene.play_bgm("http://music.163.com/song/media/outer/url?id="+id+".mp3");
 }
 function 音乐关()
 {
-    GameScene.stop_bgm();
+    window.GameScene.stop_bgm();
+}
+function 输入(MDvalue)
+{
+
+}
+function 定时器(time)
+{
+
+}
+
+class 背包
+{
+    constructor(bag_name,bag_space)
+    {
+        this.bag_name=bag_name;
+        this.bag_space=bag_space;
+    }
+    obj={};
+    放入(name,num)
+    {
+        this.obj[name]+=num;
+    }
+    拿出(name,num)
+    {
+        if(this.obj[name]-num>=0) this.obj[name]-=num;
+        else this.obj[name]=0;
+    }
+    改名(newname)
+    {
+        this.bag_name=newname;
+    }
+    改容(newspace)
+    {
+        this.bag_space=newspace;
+    }
+}
+class 地图
+{
+    constructor(map_name,map_originalX,map_originalY)
+    {
+        this.map_name=map_name;
+        this.map_X=map_originalX;
+        this.map_Y=map_originalY;
+    }
+
+}
+class _人物
+{
+
 }
