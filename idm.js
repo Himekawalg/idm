@@ -21,9 +21,20 @@ function _时间差(t1,t2)
 {
 
 }
-function _数组和()
+function _数组和(arr)
 {
-
+    var sum;
+    for(i=0;i<arr.length;i++) sum+=arr[i];
+    return sum;
+}
+function _输入(MDvalue,tip="",default_input="")
+{
+    var idm_tmp=prompt(tip,default_input);
+    eval("var window"+toString(MDvalue)+"="+idm_tmp); //it can't work
+}
+function _定时器(time,event)
+{
+    setTimeout("eval("+event+")",time);
 }
 
 function 随机数()
@@ -126,22 +137,14 @@ function 弹窗(message)
 }
 function 音乐开(id)
 {
-    window.GameScene.play_bgm("http://music.163.com/song/media/outer/url?id="+id+".mp3");
+    play_bgm("http://music.163.com/song/media/outer/url?id="+id+".mp3");
 }
 function 音乐关()
 {
-    window.GameScene.stop_bgm();
-}
-function 输入(MDvalue)
-{
-
-}
-function 定时器(time)
-{
-
+    stop_bgm();
 }
 
-class 背包
+class _背包
 {
     constructor(bag_name,bag_space)
     {
@@ -152,6 +155,7 @@ class 背包
     放入(name,num)
     {
         this.obj[name]+=num;
+        if(this.obj[name]==NaN) this.obj[name]=num;
     }
     拿出(name,num)
     {
@@ -167,7 +171,7 @@ class 背包
         this.bag_space=newspace;
     }
 }
-class 地图
+class _地图
 {
     constructor(map_name,map_originalX,map_originalY)
     {
