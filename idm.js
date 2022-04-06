@@ -1,7 +1,7 @@
 // idm.js by Himekawa(Hermit) - 蝶梦js扩展库,优先支持中文。
 
 // 内置变量
-var idm_version="0.1";
+var idm_version="0.2";
 var idm_author="Himekawa";
 var pi=3.141592653589793;
 // 带"_"的为测试中函数
@@ -21,22 +21,22 @@ function _时间差(t1,t2)
 {
 
 }
-function _数组和(arr)
-{
-    var sum;
-    for(i=0;i<arr.length;i++) sum+=arr[i];
-    return sum;
-}
 function _输入(MDvalue,tip="",default_input="")
 {
     var idm_tmp=prompt(tip,default_input);
     eval("var window"+toString(MDvalue)+"="+idm_tmp); //it can't work
 }
-function _定时器(time,event)
+
+function 数组和(arr)
+{
+    var sum;
+    for(i=0;i<arr.length;i++) sum+=arr[i];
+    return sum;
+}
+function 定时器(time,event)
 {
     setTimeout("eval("+event+")",time);
 }
-
 function 随机数()
 {
     return Math.random();
@@ -137,11 +137,11 @@ function 弹窗(message)
 }
 function 音乐开(id)
 {
-    play_bgm("http://music.163.com/song/media/outer/url?id="+id+".mp3");
+    eval("play_bgm(\"http://music.163.com/song/media/outer/url?id=\"+id+\".mp3\")");
 }
 function 音乐关()
 {
-    stop_bgm();
+    eval("stop_bgm()");
 }
 
 class _背包
